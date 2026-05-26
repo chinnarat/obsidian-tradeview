@@ -14,7 +14,7 @@
   </div>
   <div>
     <img src="https://img.shields.io/badge/Licence-MIT-D93192" alt="Release">
-    <img src="https://img.shields.io/github/stars/TheManuelML/obsidian-agent?style=social" alt="GitHub stars">
+    <img src="https://img.shields.io/github/stars/TheManuelML/obsidian-tradeview?style=social" alt="GitHub stars">
   </div>
 </div>
 
