@@ -121,26 +121,25 @@ function SettingsPanel({
 
 	return (
 		<div
-			className="stock-view-settings-panel"
-			style={{ display: visible ? "flex" : "none" }}
+			className={`stock-view-settings-panel${visible ? "" : " is-hidden"}`}
 		>
 			<div className="stock-view-panel-header">
 				<span className="stock-view-panel-title">Widget settings</span>
-				<div className="stock-view-panel-header-btns">	
+				<div className="stock-view-panel-header-btns">
 					<button
 						type="button"
+						className="stock-view-icon-btn stock-view-icon-btn-ghost"
 						aria-label="Restore defaults"
 						onClick={onRestoreDefaults}
-						style={{ padding: "0px", width: "30px", height: "25px", backgroundColor: "transparent", boxShadow: "none" }}
 					>
 						<RotateCcw size={16} />
 					</button>
-					
+
 					<button
 						type="button"
+						className="stock-view-icon-btn stock-view-icon-btn-ghost"
 						aria-label="Close settings"
 						onClick={onClose}
-						style={{ padding: "0px", width: "30px", height: "25px", backgroundColor: "transparent", boxShadow: "none" }}
 					>
 						<X size={20} />
 					</button>
@@ -289,17 +288,17 @@ const StockViewUI = forwardRef<StockViewUIHandle, StockViewUIProps>(
 					<div className="stock-view-chart-toolbar">
 						<button
 							type="button"
+							className="stock-view-icon-btn"
 							aria-label="Open settings"
 							onClick={() => setSettingsVisible((v) => !v)}
-							style={{ padding: "0px", width: "30px", height: "25px" }}
 						>
 							<Settings size={16} />
 						</button>
 						<button
 							type="button"
+							className="stock-view-icon-btn"
 							aria-label="Reload widget"
 							onClick={loadWidget}
-							style={{ padding: "0px", width: "30px", height: "25px" }}
 						>
 							<RefreshCcw size={16} />
 						</button>

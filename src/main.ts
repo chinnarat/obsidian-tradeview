@@ -15,12 +15,6 @@ export default class StockViewPlugin extends Plugin {
 	async onload(): Promise<void> {
 		await this.loadSettings();
 
-		// Guard against stale view-type registrations left over when Obsidian
-		// was force-closed or a previous reload didn't fully clean up.
-		this.app.workspace.detachLeavesOfType(STOCK_VIEW_TYPE);
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		(this.app as any).viewRegistry?.unregisterView?.(STOCK_VIEW_TYPE);
-
 		this.registerView(
 			STOCK_VIEW_TYPE,
 			(leaf) => new StockView(leaf, this)
@@ -39,10 +33,6 @@ export default class StockViewPlugin extends Plugin {
 		});
 
 		this.addSettingTab(new StockViewSettingTab(this.app, this));
-	}
-
-	onunload(): void {
-		this.app.workspace.detachLeavesOfType(STOCK_VIEW_TYPE);
 	}
 
 	async loadSettings(): Promise<void> {
