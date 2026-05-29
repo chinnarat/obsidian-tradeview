@@ -298,7 +298,7 @@ const StockViewUI = forwardRef<StockViewUIHandle, StockViewUIProps>(
 							type="button"
 							className="stock-view-icon-btn"
 							aria-label="Reload widget"
-							onClick={loadWidget}
+							onClick={() => { void loadWidget(); }}
 						>
 							<RefreshCcw size={16} />
 						</button>

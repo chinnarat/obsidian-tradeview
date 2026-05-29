@@ -64,7 +64,7 @@ export default class StockViewPlugin extends Plugin {
 		}
 
 		if (leaf) {
-			workspace.revealLeaf(leaf);
+			void workspace.revealLeaf(leaf);
 		}
 	}
 }

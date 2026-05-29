@@ -65,11 +65,8 @@ export class StockView extends ItemView {
 				`Stock view: TradingView returned status ${res.status}. Try again later.`
 			);
 			return false;
-		} catch (err) {
-			const msg = err instanceof Error ? err.message : "unknown error";
-			new Notice(
-				`Stock view: failed to reach TradingView. Check your internet connection or try again later.`
-			);
+		} catch {
+			new Notice("Stock view: failed to reach TradingView. Check your internet connection or try again later.");
 			return false;
 		}
 	}
